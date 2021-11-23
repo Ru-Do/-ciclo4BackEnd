@@ -36,6 +36,20 @@ exports.obtenerUsers = async(req,res) => {
   }
 }
 
+exports.probarLogin = async(req,res) => {
+  try {
+    const {correoElectronico, contrasena} = req.body;
+    const login = await User.findOne({correoElectronico});
+    if (!login) return res.status(401).send("no existe correo");
+    if (login.contrasena !== contrasena) return res.status(401).send('Wrong Password');
+    (res.json({login}));
+
+  } catch (error) {
+    console.log(error);
+    res.status(500).send('Se presento un error');
+  }
+}
+
 exports.actualizarUser = async(req,res) => {
   try {
     
