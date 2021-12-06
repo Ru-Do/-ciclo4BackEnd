@@ -59,9 +59,9 @@ exports.actualizarPublicacion = async(req,res) => {
       tipoDona,nivelAcademico} = req.body;
     
     let publicacion = await Publicacion.findById(req.params.id);
-
+    //console.log(publicacion);
     if(!publicacion){
-      res.status(404).json({msg: "No existe el Usuario"});
+      return res.status(404).json({msg: "No existe el Usuario"});
     }
 
     publicacion.sector = sector;
@@ -72,8 +72,8 @@ exports.actualizarPublicacion = async(req,res) => {
     publicacion.tipoDona = tipoDona;
     publicacion.nivelAcademico = nivelAcademico;
 
-    publicacion = await Publicacion.findByIdAndUpdate({ _id: req.params.id}, Publicacion, {new:true});
-    res.json(Publicacion);
+    publicacion = await Publicacion.findOneAndUpdate({ _id: req.params.id}, publicacion, {new:true});
+    res.json(publicacion);
     
   } catch (error) {
     console.log(error);
