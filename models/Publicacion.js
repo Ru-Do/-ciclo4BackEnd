@@ -4,31 +4,35 @@ const PublicacionSchema = mongoose.Schema({
 
     sector:{
       type: String,
-      required: true,
+      required: false,
     },
     fechaInicio: {
-      type: Date,
-      required: true,
+      type: String,
+      required: false,
     },
     fechaFin: {
-      type: Date,
-      required: true,
+      type: String,
+      required: false,
     },
     descripcion:{
       type: String,
-      required: true,
+      required: false,
     },
     idDueno:{
       type: String,
       required: true,
     },
-    tipoDona:{
+    nombreDueno:{
       type: String,
       required: true,
     },
+    tipoDona:{
+      type: String,
+      required: false,
+    },
     nivelAcademico: {
       type: String,
-      required: true,
+      required: false,
     },
     fechaCreacion: {
       type: Date,

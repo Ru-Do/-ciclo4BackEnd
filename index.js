@@ -22,23 +22,3 @@ app.use('/api/publicacion', require('./routes/publicacion'));
 app.listen(4000, () => {
   console.log('El servidor esta corriendo');
 })
-/*
-{
-  "ciudad": "Montería",
-  "contrasena": "rudo123",
-  "correoElectronico": "rudo@fundacion.com",
-  "direccion": "santa monica calle 20",
-  "nombreOrganizacion": "Fundaciónrudo",
-  "numeroDocumento": "90001025",
-  "numeroTelefono1": "3002225544",
-  "numeroTelefono2": "",
-  "pais": "Colombia",
-  "primerApellido": "",
-  "primerNombre": "",
-  "sector": "Deportes",
-  "segundoApellido": "",
-  "segundoNombre": "",
-  "tipoDocumento": "NIT",
-  "tipoUsuario": "Fundación"
-}
-*/
